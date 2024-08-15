@@ -75,6 +75,9 @@ jobs:
       with:
         name: release-aab
 
+    - name: List AAB Directory
+      run: ls -R app/build/outputs/bundle/release/
+
     - name: Deploy to Play Store
       uses: r0adkll/upload-google-play@v1
       with:
