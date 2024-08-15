@@ -64,12 +64,6 @@ jobs:
         name: release-aab
         path: app/build/outputs/bundle/release/*.aab
 
-  deploy:
-    name: Deploy to Play Store
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
     - name: Download AAB
       uses: actions/download-artifact@v3
       with:
