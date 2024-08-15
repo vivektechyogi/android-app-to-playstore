@@ -51,11 +51,11 @@ jobs:
       with:
         name: release-apk
 
-    - name: Generate Release Notes
-      id: generate_release_notes
-      run: |
-        git log -1 --pretty=format:"%s" > release_notes.txt
-        echo "RELEASE_NOTES=$(cat release_notes.txt)" >> $GITHUB_ENV
+#    - name: Generate Release Notes
+#      id: generate_release_notes
+#      run: |
+#        git log -1 --pretty=format:"%s" > release_notes.txt
+#        echo "RELEASE_NOTES=$(cat release_notes.txt)" >> $GITHUB_ENV
 
     - name: Deploy to Play Store
       uses: r0adkll/upload-google-play@v1
@@ -64,4 +64,4 @@ jobs:
         packageName: 'com.example.app'
         releaseFile: 'app/build/outputs/apk/release/app-release.apk'
         track: production
-        releaseNotes: ${{ env.RELEASE_NOTES }}
+#        releaseNotes: ${{ env.RELEASE_NOTES }}
