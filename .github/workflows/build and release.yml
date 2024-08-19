@@ -78,7 +78,7 @@ jobs:
     - name: Deploy to Play Store
       uses: r0adkll/upload-google-play@v1
       with:
-        serviceAccountJsonPlainText: service_account.json
+        serviceAccountJson: service_account.json
         packageName: com.techyogi.apptoplaystore
         releaseFiles: app/build/outputs/bundle/release/app-release.aab
         track: production
