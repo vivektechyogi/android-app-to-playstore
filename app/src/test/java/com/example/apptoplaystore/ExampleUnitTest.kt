@@ -1,4 +1,4 @@
-package com.example.apptoplaystore
+package com.techyogi.apptoplaystore
 
 import org.junit.Test
 
