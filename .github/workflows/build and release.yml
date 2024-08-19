@@ -51,9 +51,9 @@ jobs:
       with:
         releaseDirectory: app/build/outputs/bundle/release
         signingKeyBase64: ${{ secrets.KEYSTORE_BASE_64 }}
-        alias: ${{ secrets.SIGNING_KEY_ALIAS }}
-        keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
-        keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+        alias: ${{ secrets.RELEASE_KEYSTORE_ALIAS }}
+        keyStorePassword: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
+        keyPassword: ${{ secrets.RELEASE_KEY_PASSWORD }}
 
     - name: Create service_account.json
       id: createServiceAccount
