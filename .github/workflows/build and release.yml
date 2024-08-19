@@ -45,6 +45,16 @@ jobs:
         RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
       run: ./gradlew bundleRelease --stacktrace
 
+    - name: Sign AAb
+      id: sign
+      uses: r0adkll/sign-android-release@v1
+      with:
+        releaseDirectory: app/build/outputs/bundle/release
+        signingKeyBase64: ${{ secrets.KEYSTORE_BASE_64 }}
+        alias: ${{ secrets.SIGNING_KEY_ALIAS }}
+        keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
+        keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+
     - name: Create service_account.json
       id: createServiceAccount
       run: echo '${{ secrets.SERVICE_ACCOUNT_JSON }}' > service_account.json
