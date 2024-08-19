@@ -31,9 +31,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
 
-
-    - name: Grant rights
-      run: chmod +x build.gradle
     - name: Build with Gradle
       id: build
       run: ./gradlew build
